@@ -7,8 +7,10 @@ const FeatureList = [
     title: 'Architecture Overview',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+       The frontend application sends requests to the proxy API instead of directly contacting the Syllabus API. This could involve fetching syllabus data, 
+        submitting user information, or other API operations. he proxy API receives the request from the frontend. It may perform several tasks at this stage like autheticating, Input validatoin, and rate limiting.
+        After processing, the proxy API formats the request as needed and forwards it to the Syllabus API. This may involve changing endpoint urls and modifying headers. The Syllabus API processes the request and 
+        sends back a response. This response might contain the requested syllabus data, error messages, or other relevant information. The proxy API receives the response from the Syllabus API and performs any necessary transformations.
       </>
     ),
   },
@@ -16,8 +18,11 @@ const FeatureList = [
     title: 'Use Cases:',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      Case 1:
+      <img src="/usercase1.png" alt="Sequence diagram" style={{ width: '100%', height: 'auto' }} />
+
+      Case2: 
+      <img src="/usercase1.png" alt="Sequence diagram" style={{ width: '100%', height: 'auto' }} />
       </>
     ),
   },
@@ -37,7 +42,7 @@ function Feature({Svg, title, description}) {
     <div className={clsx('col col--4')}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        <div>{description}</div>
       </div>
     </div>
   );
